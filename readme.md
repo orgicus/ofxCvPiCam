@@ -8,6 +8,10 @@ I warmly recommend using [Kyle McDonalds' ofxCv](https://github.com/kylemcdonald
 it makes writing modern opencv code so much easier. The example included uses ofxCv's ```drawMat()```
 to display cv::Mat objects in OpenFrameworks. You can of course use your prefered method.
 
+Since this addon is intended for computer vision, you'll get the best results with the grayscale image
+(which you will need most of the time). If you simply want to use the Pi Camera module in OpenFrameworks
+without any computer vision please use Jason van Cleave's [ofxRPiCameraVideoGrabber](https://github.com/jvcleave/ofxRPiCameraVideoGrabber) addon (GPU accelerated using OMX)
+
 # Installation
 
 Either clone out the source code using git:
