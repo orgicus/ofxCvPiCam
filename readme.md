@@ -32,6 +32,7 @@ Use the ```grab()``` method fetch a cv::Mat frame then carry on processing it
 
 ## Credits
 This wrapper is mostly done by putting together the work of
+
 [Samarth Manoj Brahmbhatt](http://www.seas.upenn.edu/~samarthb/academics/index.html), University of Pennsyalvania -> cv::Mat wrapper listed in his title: Practical OpenCV
 
 
