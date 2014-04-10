@@ -5,8 +5,9 @@ It uses the MMAL interface to grab frames and convert them the cv::Mat type
 which can be processed using the typical opencv calls.
 
 I warmly recommend using [Kyle McDonalds' ofxCv](https://github.com/kylemcdonald/ofxCv) addon: 
-it makes writing modern opencv code so much easier. The example included uses ofxCv's ```drawMat()```
+it makes writing modern opencv code so much easier. The examples included uses ofxCv's ```drawMat()```
 to display cv::Mat objects in OpenFrameworks. You can of course use your prefered method.
+In fact, excluding example-ofxCvPiCam and example-ofxCvPiCam-allSettings, examples are from ofxCv
 
 Since this addon is intended for computer vision, you'll get the best results with the grayscale image
 (which you will need most of the time). If you simply want to use the Pi Camera module in OpenFrameworks
@@ -30,16 +31,21 @@ Use the ```grab()``` method fetch a cv::Mat frame then carry on processing it
 *Note* sometimes frames can be skipped so it's best to check if the returned matrix is not empty.
 
 ## Current issues
-
-- imshow displays colour(BGR) frame correctly, drawMat seems to swap channels
+<strike>
+- imshow displays colour(BGR) frame correctly, drawMat expects RGB matrices, while opencv mostly uses BGR
 - there is currently no camera settings interface
+</strike>
+The face example currently require a slight modification to ofxCv's ObjectFinder's class. 
+Either add an updateGray() method which allows ObjectFinder to work from grayscale image(without any conversion)
+or use [my fork of ofxCv](http://github.com/orgicus/ofxCvPi) which has this tiny tweak
 
 ## Credits
 This wrapper is mostly done by putting together the work of
 
-[Samarth Manoj Brahmbhatt](http://www.seas.upenn.edu/~samarthb/academics/index.html), University of Pennsyalvania -> cv::Mat wrapper listed in his title: Practical OpenCV
+[Samarth Manoj Brahmbhatt](http://www.seas.upenn.edu/~samarthb/academics/index.html), University of Pennsyalvania -> cv::Mat wrapper listed in his book: Practical OpenCV
 
 
 [Jason Van Cleave](https://github.com/jvcleave) -> captureApplication mmal openframeworks demo
+
 
 Developed at [Hirsch&Mann](http://hirschandmann.com)

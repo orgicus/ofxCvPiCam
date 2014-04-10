@@ -1,0 +1,4 @@
+
+ofxOpenCv
+ofxCv
+ofxCvPiCam
