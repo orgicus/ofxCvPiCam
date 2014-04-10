@@ -20,7 +20,7 @@ Either clone out the source code using git:
 	> cd openFrameworks/addons/
 	> git clone https://github.com/orgicus/ofxCvPiCam.git
 
-Or download the source from GitHub [here](https://github.com/orgicus/ofxCvPiCam/archive/master.zip), unzip the folder, rename it from `ofxCv-master` to `ofxCv` and place it in your `openFrameworks/addons` folder.
+Or download the source from GitHub [here](https://github.com/orgicus/ofxCvPiCam/archive/master.zip), unzip the folder, rename it from `ofxCvPiCam-master` to `ofxCvPiCam` and place it in your `openFrameworks/addons` folder.
 
 
 ## Working with ofxCvPiCam
