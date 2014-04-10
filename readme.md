@@ -46,3 +46,7 @@ This wrapper is mostly done by putting together the work of
 
 
 Developed at [Hirsch&Mann](http://hirschandmann.com)
+
+![ofxCvPiCam threhshold](http://lifesine.eu/rpi/ofxCvPiCam1.jpg)
+![ofxCvPiCam settings](http://lifesine.eu/rpi/ofxCvPiCam2.jpg)
+![ofxCvPiCam faces](http://lifesine.eu/rpi/ofxCvPiCam3.jpg)
