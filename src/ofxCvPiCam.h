@@ -55,25 +55,101 @@ public:
     MMAL_COMPONENT_T *getCamera(){ return camera; }
 
     //settings
-    //*
+    /**
+     * @brief setSaturation
+     * @param saturation (-100,100)
+     * @return
+     */
     int setSaturation(int saturation);
+    /**
+     * @brief setSharpness
+     * @param sharpness (-100,100)
+     * @return
+     */
     int setSharpness(int sharpness);
+    /**
+     * @brief setContrast
+     * @param contrast (-100,100)
+     * @return
+     */
     int setContrast(int contrast);
+    /**
+     * @brief setBrightness
+     * @param brightness (0,100)
+     * @return
+     */
     int setBrightness(int brightness);
+    /**
+     * @brief setISO
+     * @param ISO (100,800) - default is 300
+     * @return
+     */
     int setISO(int ISO);
+    /**
+     * @brief setExposureMeteringMode
+     * @param m_mode (0,4)
+     * @return
+     */
     int setExposureMeteringMode(MMAL_PARAM_EXPOSUREMETERINGMODE_T m_mode);
+    /**
+     * @brief setVideoStabilisation
+     * @param vstabilisation (1 is on, 0 is off)
+     * @return
+     */
     int setVideoStabilisation(int vstabilisation);
+    /**
+     * @brief setExposureCompensation
+     * @param exp_comp (-10,10)
+     * @return
+     */
     int setExposureCompensation(int exp_comp);
+    /**
+     * @brief setExposureMode
+     * @param mode (0,13)
+     * @return
+     */
     int setExposureMode(MMAL_PARAM_EXPOSUREMODE_T mode);
-    int setAWBMode(MMAL_PARAM_AWBMODE_T awb_mode);//TODO
-    int setAWBGains(float r_gain,float b_gain);//TODO
+    /**
+     * @brief setAWBMode
+     * @param awb_mode (0,10)
+     * @return
+     */
+    int setAWBMode(MMAL_PARAM_AWBMODE_T awb_mode);
+    /**
+     * @brief setAWBGains
+     * @param r_gain (0.0,1.0)
+     * @param b_gain (0.0,1.0)
+     * @return
+     */
+    int setAWBGains(float r_gain,float b_gain);
+    /**
+     * @brief setImageFX
+     * @param imageFX (0,23)
+     * @return
+     */
     int setImageFX(MMAL_PARAM_IMAGEFX_T imageFX);//TODO example
     int setColourFX(MMAL_PARAM_COLOURFX_T *colourFX);//TODO example
+    /**
+     * @brief setRotation
+     * @param rotation (0,359) try 0,90,180,270
+     * @return
+     */
     int setRotation(int rotation);
+    /**
+     * @brief setFlips
+     * @param hflip (0,1) treat as bool
+     * @param vflip (0,1) treat as bool
+     * @return
+     */
     int setFlips(int hflip,int vflip);
 //    int setROI(PARAM_FLOAT_RECT_T rect);
     int setROI(ofRectangle rect);
-    int setShutterSpeed(int speed);//TODO
+    /**
+     * @brief setShutterSpeed
+     * @param speed (0,330000) in microseconds, 0 is auto
+     * @return
+     */
+    int setShutterSpeed(int speed);
 
     int mmal_status_to_int(MMAL_STATUS_T status)
     {
