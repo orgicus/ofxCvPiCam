@@ -16,7 +16,7 @@ void testApp::setup() {
 void testApp::update() {
     frame = cam.grab();
     if(!frame.empty()) {
-        objectFinder.updateGray(frame);
+        objectFinder.update(frame);
 		if(objectFinder.size() > 0) {
 			cv::Rect roi = toCv(objectFinder.getObject(0));
             Mat croppedCamMat(frame, roi);

@@ -30,12 +30,6 @@ Use the ```grab()``` method fetch a cv::Mat frame then carry on processing it
 
 *Note* sometimes frames can be skipped so it's best to check if the returned matrix is not empty.
 
-## Current issues
-
-The face example currently require a slight modification to ofxCv's ObjectFinder's class. 
-Either add an updateGray() method which allows ObjectFinder to work from grayscale image(without any conversion)
-or use [my fork of ofxCv](http://github.com/orgicus/ofxCvPi) which has this tiny tweak
-
 ## Credits
 This wrapper is mostly done by putting together the work of
 

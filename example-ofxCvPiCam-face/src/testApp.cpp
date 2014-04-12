@@ -8,19 +8,12 @@ void testApp::setup() {
 	ofSetFrameRate(120);
 	finder.setup("haarcascade_frontalface_alt2.xml");
 	finder.setPreset(ObjectFinder::Fast);
-    //cam.initGrabber(640, 480);
-    cam.setup(320,240,false);
+    cam.setup(320,240,true);
 }
 
 void testApp::update() {
-    /*
-	cam.update();
-	if(cam.isFrameNew()) {
-		finder.update(cam);
-	}
-    */
     frame = cam.grab();
-    if(!frame.empty()) finder.updateGray(frame);
+    if(!frame.empty()) finder.update(frame);
 }
 
 void testApp::draw() {

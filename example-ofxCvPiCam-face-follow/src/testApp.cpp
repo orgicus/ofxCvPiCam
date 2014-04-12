@@ -17,7 +17,7 @@ void testApp::setup() {
 void testApp::update() {
     frame = cam.grab();
     if(!frame.empty()) {
-        finder.updateGray(frame);
+        finder.update(frame);
 	}
 }
 
