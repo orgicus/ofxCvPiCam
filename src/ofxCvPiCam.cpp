@@ -21,6 +21,8 @@ static void gray_callback(MMAL_PORT_T *port, MMAL_BUFFER_HEADER_T *buffer) {
         if (!new_buffer || status != MMAL_SUCCESS)
             ofLogVerbose() << ("Unable to return a buffer to the video port\n");
     }
+    newFrame = true;
+
 }
 
 static void color_callback(MMAL_PORT_T *port, MMAL_BUFFER_HEADER_T *buffer) {
@@ -37,6 +39,7 @@ static void color_callback(MMAL_PORT_T *port, MMAL_BUFFER_HEADER_T *buffer) {
         if (!new_buffer || status != MMAL_SUCCESS)
             ofLogVerbose() << ("Unable to return a buffer to the video port\n");
     }
+    newFrame = true;
 }
 void ofxCvPiCam::setup(int _w,int _h,bool _color)
 {
