@@ -49,10 +49,11 @@ public:
     void setup();
 
     static cv::Mat image;
+    static bool newFrame;
 
     static int width, height;
     static MMAL_POOL_T *camera_video_port_pool;
-    static void set_image(cv::Mat _image) {image = _image;}
+    static void set_image(cv::Mat _image) {newFrame = true; image = _image;}
     void setup(int _w, int _h, bool _color);
     cv::Mat grab() {newFrame = false; return image;}
     MMAL_COMPONENT_T *getCamera(){ return camera; }
@@ -185,7 +186,7 @@ public:
     }
     //*/
 private:
-    bool color, newFrame;
+    bool color;
     MMAL_COMPONENT_T *camera;
     MMAL_COMPONENT_T *preview;
     MMAL_ES_FORMAT_T *format;
