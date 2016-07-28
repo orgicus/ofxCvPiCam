@@ -43,15 +43,19 @@ public:
 
     ofxCvPiCam();
     ~ofxCvPiCam();
+
+    bool isFrameNew() {return newFrame;};
+
     void setup();
 
     static cv::Mat image;
+    static bool newFrame;
 
     static int width, height;
     static MMAL_POOL_T *camera_video_port_pool;
-    static void set_image(cv::Mat _image) {image = _image;}
+    static void set_image(cv::Mat _image) {newFrame = true; image = _image;}
     void setup(int _w, int _h, bool _color);
-    cv::Mat grab() {return image;}
+    cv::Mat grab() {newFrame = false; return image;}
     MMAL_COMPONENT_T *getCamera(){ return camera; }
 
     //settings
